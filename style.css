@@ -1,0 +1,21 @@
+body {
+  background-color: rgb(23, 21, 21);
+}
+
+.formContainer {
+  width: 500px;
+  height: auto;
+  margin: 50px auto;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.table {
+  width: 800px;
+  margin: 20px auto;
+  background-color: white;
+  color: black;
+  text-align: center;
+}
