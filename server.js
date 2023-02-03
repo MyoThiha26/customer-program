@@ -1,6 +1,5 @@
 const fs = require("fs");
 const http = require("http");
-
 const users = [
   {
     id: 1,
