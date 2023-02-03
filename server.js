@@ -28,7 +28,7 @@ const users = [
 ];
 
 const server = http.createServer((req, res) => {
-  /* const isRootUrl = req.url === "/";
+  const isRootUrl = req.url === "/";
   if (isRootUrl) {
     fs.readFile("index.html", (err, data) => {
       res.writeHead(200, { "Content-Type": "text/html" });
@@ -129,9 +129,9 @@ const server = http.createServer((req, res) => {
     res.write("<h1>Unknown route</h1>");
     res.end();
   }
-  */
-  res.writeHead(200, { "Content-Type": "text/html" });
-  res.write("<h1>Hello World</h1>");
+
+  // res.writeHead(200, { "Content-Type": "text/html" });
+  // res.write("<h1>Hello World</h1>");
 });
 
 server.listen(3000, () => {

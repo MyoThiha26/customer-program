@@ -11,7 +11,7 @@ const registerUser = async () => {
     createdAt: `${new Date().toLocaleDateString()} ${new Date().toLocaleTimeString()}`,
     updatedAt: `${new Date().toLocaleDateString()} ${new Date().toLocaleTimeString()}`,
   };
-  const response = await fetch("http://localhost:3000/users", {
+  const response = await fetch("https://customerprogram.onrender.com/users", {
     method: "POST",
     body: JSON.stringify(newUser),
   });
@@ -23,7 +23,7 @@ const updateUser = async () => {
   const email = document.querySelector("#userEmailInput").value;
   const password = document.querySelector("#userPasswordInput").value;
   const updatedUser = { name: name, email: email, password: password };
-  const response = await fetch("http://localhost:3000/users", {
+  const response = await fetch("https://customerprogram.onrender.com/users", {
     method: "PUT",
     body: JSON.stringify(updatedUser),
   });
@@ -50,7 +50,7 @@ const deleteUser = async (id) => {
   console.log(deleteUserid);
   const deletedUserObj = { id: deleteUserid };
   console.log(deletedUserObj);
-  const response = await fetch("http://localhost:3000/users", {
+  const response = await fetch("https://customerprogram.onrender.com/users", {
     method: "DELETE",
     body: JSON.stringify(deletedUserObj),
   });
@@ -77,7 +77,7 @@ const deleteUser = async (id) => {
 };
 
 const getUser = async () => {
-  const response = await fetch("http://localhost:3000/users");
+  const response = await fetch("https://customerprogram.onrender.com/users");
   const data = await response.json();
   const usersContainer = document.getElementsByClassName("users")[0];
   data.forEach((element) => {
@@ -105,7 +105,7 @@ const getUser = async () => {
 getUser();
 
 const newUserID = async () => {
-  const getResponse = await fetch("http://localhost:3000/users");
+  const getResponse = await fetch("https://customerprogram.onrender.com/users");
   const data = await response.json();
   const totalUser = JSON.parse(data);
   const lastId = totalUser[totalUser.length - 1].id;
@@ -127,10 +127,13 @@ const newUserID = async () => {
 const fileUpload = async () => {
   const inputTag = document.querySelector("#fileUpload");
   console.log(inputTag.files[0]);
-  const response = await fetch("http://localhost:3000/fileUpload", {
-    method: "POST",
-    body: inputTag.files[0],
-  });
+  const response = await fetch(
+    "https://customerprogram.onrender.com/fileUpload",
+    {
+      method: "POST",
+      body: inputTag.files[0],
+    }
+  );
   const data = await response.json();
   console.log(data);
 };
